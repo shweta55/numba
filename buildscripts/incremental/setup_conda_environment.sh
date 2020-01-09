@@ -43,7 +43,10 @@ conda remove --all -q -y -n $CONDA_ENV
 # is to catch tests/code paths that require an optional package and are not
 # guarding against the possibility that it does not exist in the environment.
 # Create a base env first and then add to it...
-
+if [ `uname -m` = 'aarch64' ]; then
+    sudo chmod -R 777 /home/travis/miniconda
+    sudo chmod -R 777 /home/travis/.condarc
+fi
 conda create -n $CONDA_ENV -q -y ${EXTRA_CHANNELS} python=$PYTHON numpy=$NUMPY pip
 
 # Activate first
