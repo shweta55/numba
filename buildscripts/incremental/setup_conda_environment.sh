@@ -79,6 +79,7 @@ if [[ $(uname) == Linux ]]; then
             $CONDA_INSTALL gcc_linux-64 gxx_linux-64
         else
             $CONDA_INSTALL gcc-aarch64-linux-gnu gxx-aarch64-linux-gnu
+        fi
     fi
 elif  [[ $(uname) == Darwin ]]; then
     $CONDA_INSTALL clang_osx-64 clangxx_osx-64
