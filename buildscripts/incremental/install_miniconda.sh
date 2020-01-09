@@ -12,6 +12,7 @@ if [[ "$unamestr" == 'Linux' ]]; then
             wget -q "https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh" -O archiconda.sh
         else
             wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+        fi
     fi
 elif [[ "$unamestr" == 'Darwin' ]]; then
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh
