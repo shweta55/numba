@@ -46,8 +46,10 @@ conda remove --all -q -y -n $CONDA_ENV
 if [ `uname -m` = 'aarch64' ]; then
     sudo chmod -R 777 /home/travis/miniconda
     sudo chmod -R 777 /home/travis/.condarc
+    conda create -n $CONDA_ENV -q -y ${EXTRA_CHANNELS} python=$PYTHON numpy="1.17" pip
+else
+    conda create -n $CONDA_ENV -q -y ${EXTRA_CHANNELS} python=$PYTHON numpy=$NUMPY pip
 fi
-conda create -n $CONDA_ENV -q -y ${EXTRA_CHANNELS} python=$PYTHON numpy=$NUMPY pip
 
 # Activate first
 set +v
