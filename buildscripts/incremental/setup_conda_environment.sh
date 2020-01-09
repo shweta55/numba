@@ -3,9 +3,6 @@
 set -v -e
 
 if [ `uname -m` = 'aarch64' ]; then
-    sudo chmod -R 777 /home/travis/miniconda
-    sudo chmod -R 777 /home/travis/.condarc
-    sudo rm /usr/bin/lsb_release
     sudo rm /home/travis/.condarc
 fi
 
@@ -16,7 +13,7 @@ conda config --set remote_connect_timeout_secs 30.15
 conda config --set remote_max_retries 10
 conda config --set remote_read_timeout_secs 120.2
 if [[ $(uname) == Linux ]]; then
-    if [[ "$CONDA_SUBDIR" != "linux-32" && "$BITS32" != "yes" ]] ; then
+    if [[ `uname -m` = 'aarch64' && "$CONDA_SUBDIR" != "linux-32" && "$BITS32" != "yes" ]] ; then
         conda config --set restore_free_channel true
     fi
 fi
