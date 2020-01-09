@@ -75,7 +75,10 @@ if [[ $(uname) == Linux ]]; then
     if [[ "$CONDA_SUBDIR" == "linux-32" || "$BITS32" == "yes" ]] ; then
         $CONDA_INSTALL gcc_linux-32 gxx_linux-32
     else
-        $CONDA_INSTALL gcc_linux-64 gxx_linux-64
+        if [ `uname -m` = 'aarch64' ]; then
+            $CONDA_INSTALL gcc_linux-64 gxx_linux-64
+        else
+            $CONDA_INSTALL gcc-aarch64-linux-gnu gxx-aarch64-linux-gnu
     fi
 elif  [[ $(uname) == Darwin ]]; then
     $CONDA_INSTALL clang_osx-64 clangxx_osx-64
