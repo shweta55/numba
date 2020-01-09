@@ -26,7 +26,7 @@ matrix:
         - env: PYTHON=3.7 NUMPY=1.16 CONDA_ENV=travisci TEST_THREADING=omp
         - env: PYTHON=3.7 NUMPY=1.16 CONDA_ENV=travisci TEST_THREADING=workqueue
         - arch: arm64
-            env: PYTHON=3.7 NUMPY=1.15 CONDA_ENV=travisci
+          env: PYTHON=3.7 NUMPY=1.15 CONDA_ENV=travisci
 
 
 branches:
