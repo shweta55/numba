@@ -6,6 +6,7 @@ if [ `uname -m` = 'aarch64' ]; then
     sudo chmod -R 777 /home/travis/miniconda
     sudo chmod -R 777 /home/travis/.condarc
     sudo rm /usr/bin/lsb_release
+    sudo rm /home/travis/.condarc
 fi
 
 # first configure conda to have more tolerance of network problems, these
