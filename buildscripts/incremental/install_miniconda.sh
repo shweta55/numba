@@ -8,7 +8,7 @@ if [[ "$unamestr" == 'Linux' ]]; then
     if [[ "$BITS32" == "yes" ]]; then
         wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86.sh -O miniconda.sh
     else
-        if [[`uname -m ` == 'aarch64']]; then 
+        if [[ `uname -m ` == 'aarch64' ]]; then 
             wget -q "https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh" -O archiconda.sh
         else
             wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
@@ -19,7 +19,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 else
   echo Error
 fi
-if [[`uname -m ` == 'aarch64']]; then 
+if [[ `uname -m ` == 'aarch64' ]]; then 
   chmod +x archiconda.sh
   bash archiconda.sh -b -p $HOME/miniconda
   export PATH="$HOME/miniconda/bin:$PATH"
