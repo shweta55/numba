@@ -76,9 +76,9 @@ if [[ $(uname) == Linux ]]; then
         $CONDA_INSTALL gcc_linux-32 gxx_linux-32
     else
         if [ `uname -m` = 'aarch64' ]; then
-            $CONDA_INSTALL gcc_linux-64 gxx_linux-64
-        else
             $CONDA_INSTALL gcc-aarch64-linux-gnu gxx-aarch64-linux-gnu
+        else
+            $CONDA_INSTALL gcc_linux-64 gxx_linux-64
         fi
     fi
 elif  [[ $(uname) == Darwin ]]; then
