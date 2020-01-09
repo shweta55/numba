@@ -10,5 +10,9 @@ python setup.py build_ext -q --inplace
 # (note we don't install to avoid problems with extra long Windows paths
 #  during distutils-dependent tests -- e.g. test_pycc)
 
+
 # Install numba locally for use in `numba -s` sys info tool at test time
+if[` uname -m ` == "aarch64"]; then 
+  sudo rm /usr/bin/lsb_release
+fi
 python -m pip install -e .
