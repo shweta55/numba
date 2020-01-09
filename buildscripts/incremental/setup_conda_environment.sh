@@ -13,7 +13,7 @@ conda config --set remote_connect_timeout_secs 30.15
 conda config --set remote_max_retries 10
 conda config --set remote_read_timeout_secs 120.2
 if [[ $(uname) == Linux ]]; then
-    if [[ `uname -m` = 'aarch64' && "$CONDA_SUBDIR" != "linux-32" && "$BITS32" != "yes" ]] ; then
+    if [[ `uname -m` != 'aarch64' && "$CONDA_SUBDIR" != "linux-32" && "$BITS32" != "yes" ]] ; then
         conda config --set restore_free_channel true
     fi
 fi
